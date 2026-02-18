@@ -1,0 +1,178 @@
+.fruit-voting-app {
+  /* CSS Variables Definition */
+  --bg-color: #f8f9fa; /* Changed back to light gray for contrast */
+  --text-color: #2c3e50;
+  --heading-color: #2c3e50;
+  --card-bg: white;
+  --card-border: #e9ecef;
+  --card-hover-border: #2193b0;
+  --votes-bg: #e9ecef;
+  --votes-text: #495057;
+
+  /* Dark Theme Overrides */
+  &.dark {
+    --bg-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --card-bg: #16213e;
+    --card-border: #2c3e50;
+    --card-hover-border: #4cc9f0;
+    --votes-bg: #0f3460;
+    --votes-text: #e0e0e0;
+  }
+
+  /* Usage of Variables */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 500px;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  /* box-shadow removed */
+  text-align: center;
+  position: relative; /* For switcher positioning */
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  h1 {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+}
+
+.theme-switcher {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+  }
+}
+
+.winner-display {
+  background: linear-gradient(135deg, #6dd5ed, #2193b0);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(33, 147, 176, 0.3);
+  
+  h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.9;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+
+  .winner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .winners-list {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .winner-item {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+  }
+
+  .winner-icon {
+    font-size: 4rem;
+    line-height: 1;
+    margin: 0.5rem 0;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .winner-count {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    backdrop-filter: blur(5px);
+  }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.fruit-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.fruit-card {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 10px;
+  padding: 0.8rem;
+  width: 80px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  color: var(--text-color);
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: var(--card-hover-border);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  .fruit-name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    line-height: 1;
+  }
+
+  .fruit-votes {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--votes-text);
+    background-color: var(--votes-bg);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}

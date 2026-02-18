@@ -1,0 +1,53 @@
+.switcher-container {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+  user-select: none;
+
+  /* Use CSS variables from context if available, or fallbacks */
+  --switcher-bg: var(--text-color, #ccc);
+  --switcher-circle: var(--bg-color, #fff);
+  --switcher-active-bg: var(--card-hover-border, #2193b0);
+  
+  .switcher-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    
+    &.active {
+      opacity: 1;
+      font-weight: bold;
+    }
+  }
+
+  .switcher-toggle {
+    width: 50px;
+    height: 26px;
+    background-color: var(--switcher-bg);
+    border-radius: 25px;
+    position: relative;
+    transition: background-color 0.3s;
+
+    &.checked {
+      background-color: var(--switcher-active-bg);
+      
+      .switcher-circle {
+        transform: translateX(24px);
+      }
+    }
+
+    .switcher-circle {
+      width: 20px;
+      height: 20px;
+      background-color: var(--switcher-circle);
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      transition: transform 0.3s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+  }
+}

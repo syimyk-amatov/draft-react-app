@@ -1,0 +1,64 @@
+.board {
+  margin: 20px;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  .row {
+    width: 100%;
+    flex: 1;
+    display: flex;
+
+    .field {
+      height: 100%;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:nth-child(n + 2) {
+        border-left: 5px solid rgb(161, 161, 161);
+      }
+    }
+
+    &:nth-child(n + 2) {
+      border-top: 5px solid rgb(161, 161, 161);
+    }
+  }
+
+  .naught {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    border: 10px solid rgb(92, 92, 92);
+  }
+
+  .cross {
+    position: relative;
+    width: 100%;
+
+    .line {
+      position: absolute;
+      height: 10px;
+      left: 0;
+      right: 0;
+      background-color: rgb(92, 92, 92);
+
+      &:first-child {
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &:last-child {
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        transform: translateY(-50%) rotate(135deg);
+      }
+    }
+  }
+}

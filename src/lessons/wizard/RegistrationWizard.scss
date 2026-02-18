@@ -1,0 +1,163 @@
+.registration-wizard {
+  /* CSS Variables Definition - Similar to FruitVotingApp */
+  --bg-color: #f8f9fa; /* Changed back to light gray for contrast */
+  --text-color: #2c3e50;
+  --heading-color: #2c3e50;
+  --card-bg: white;
+  --card-border: #e9ecef;
+  --input-bg: #fff;
+  --input-border: #ced4da;
+  --input-text: #495057;
+  --btn-primary-bg: #2193b0;
+  --btn-primary-text: #fff;
+  --btn-secondary-bg: #6c757d;
+  --btn-secondary-text: #fff;
+  --btn-disabled-bg: #e9ecef;
+  --btn-disabled-text: #adb5bd;
+
+  /* Dark Theme Overrides */
+  &.dark {
+    --bg-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --card-bg: #16213e;
+    --card-border: #2c3e50;
+    --input-bg: #0f3460;
+    --input-border: #2c3e50;
+    --input-text: #e0e0e0;
+    --btn-primary-bg: #4cc9f0;
+    --btn-primary-text: #1a1a2e;
+    --btn-secondary-bg: #495057;
+    --btn-secondary-text: #e0e0e0;
+    --btn-disabled-bg: #16213e;
+    --btn-disabled-text: #535c68;
+  }
+
+  /* Usage of Variables */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  /* box-shadow removed */
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  h1 {
+    color: var(--heading-color);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .theme-switcher-wrapper {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+
+  .wizard-step {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+    h2 {
+      margin-top: 0;
+      color: var(--heading-color);
+      border-bottom: 2px solid var(--card-border);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .wizard-form-field {
+    margin-bottom: 1.5rem;
+    text-align: left;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--text-color);
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--input-border);
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: var(--input-bg);
+      color: var(--input-text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: var(--btn-primary-bg);
+        box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.1); /* Adjust for variable usage if needed */
+      }
+    }
+  }
+
+  .wizard-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    button {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &.btn-prev {
+        background-color: var(--btn-secondary-bg);
+        color: var(--btn-secondary-text);
+
+        &:hover:not(:disabled) {
+          filter: brightness(110%);
+        }
+      }
+
+      &.btn-next {
+        background-color: var(--btn-primary-bg);
+        color: var(--btn-primary-text);
+
+        &:hover:not(:disabled) {
+          filter: brightness(110%);
+        }
+      }
+
+      &:disabled {
+        background-color: var(--btn-disabled-bg);
+        color: var(--btn-disabled-text);
+        cursor: not-allowed;
+      }
+    }
+  }
+  
+  .wizard-summary {
+     text-align: left;
+     
+     .summary-item {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--card-border);
+        
+        strong {
+             display: inline-block;
+             width: 150px;
+             color: var(--heading-color);
+        }
+     }
+  }
+}

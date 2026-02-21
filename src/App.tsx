@@ -1,7 +1,8 @@
 import "./App.scss";
 import { DocumentTitleCounter } from "./lessons/document-title-counter/DocumentTitleCounter";
-import { IdleTimer } from "./lessons/IdleTimer/IdleTimer";
+import { PasswordGenerator } from "./lessons/PasswordGenerator/PasswordGenerator";
 import { ThemeProvider } from "./lessons/theme/ThemeContext";
+import { TodoList } from "./lessons/TodoList/TodoList";
 import { FruitVotingApp } from "./lessons/voting/FruitVotingApp";
 import { RegistrationWizard } from "./lessons/wizard/RegistrationWizard";
 
@@ -17,7 +18,8 @@ function App() {
   return (
     <ThemeProvider>
       <div className="App">
-        <IdleTimer />
+        <PasswordGenerator />
+        <TodoList />
         <DocumentTitleCounter />
         <RegistrationWizard />
         <FruitVotingApp />

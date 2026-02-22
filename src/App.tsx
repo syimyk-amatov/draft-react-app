@@ -4,6 +4,7 @@ import { PasswordGenerator } from "./lessons/PasswordGenerator/PasswordGenerator
 import { ThemeProvider } from "./lessons/theme/ThemeContext";
 import { TodoList } from "./lessons/TodoList/TodoList";
 import { TooltipDemo } from "./lessons/Tooltip/Tooltip";
+import { TransactionAnalyticsDemo } from "./lessons/TransactionAnalytics/TransactionAnalyticsDemo";
 import { FruitVotingApp } from "./lessons/voting/FruitVotingApp";
 import { RegistrationWizard } from "./lessons/wizard/RegistrationWizard";
 
@@ -19,6 +20,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="App">
+        <TransactionAnalyticsDemo />
         <TooltipDemo />
         <PasswordGenerator />
         <TodoList />

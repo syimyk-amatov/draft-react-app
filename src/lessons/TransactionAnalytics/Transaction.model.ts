@@ -9,6 +9,7 @@ export interface Transaction {
   id: number;
   amount: number;
   category: TransactionCategory;
+  createdAt: Date;
 }
 
 let transactionIdCounter = 1;
@@ -20,6 +21,7 @@ export const generateFakeTransactions = (count: number): Transaction[] => {
       id: transactionIdCounter++,
       amount: parseFloat((Math.random() * 100).toFixed(2)),
       category: categories[Math.floor(Math.random() * categories.length)],
+      createdAt: new Date(Date.now() - Math.floor(Math.random() * 10000000000)),
     });
   }
 

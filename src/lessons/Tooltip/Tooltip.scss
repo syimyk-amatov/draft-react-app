@@ -1,0 +1,84 @@
+.tooltip-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 2rem;
+  background-color: var(--color-bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  max-width: 400px;
+  margin: 2rem auto;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  position: relative; /* Context for z-index if needed */
+
+  &__title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-align: center;
+  }
+
+  &__status {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-weight: 500;
+  }
+
+  &__button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
+    }
+
+    &:active {
+      transform: translateY(0);
+      background-color: var(--color-primary-active);
+      box-shadow: var(--shadow-sm);
+    }
+  }
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 1000;
+  padding: 8px 12px;
+  background-color: #1f2937; /* Dark gray */
+  color: #f9fafb; /* Whiteish */
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  pointer-events: none; /* Mouse won't interact with it */
+  white-space: nowrap;
+  opacity: 0;
+  animation: tooltip-fade-in 0.2s ease forwards;
+}
+
+@keyframes tooltip-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

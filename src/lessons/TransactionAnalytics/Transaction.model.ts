@@ -19,7 +19,7 @@ export const generateFakeTransactions = (count: number): Transaction[] => {
   for (let i = 0; i < count; i++) {
     transactions.push({
       id: transactionIdCounter++,
-      amount: parseFloat((Math.random() * 100).toFixed(2)),
+      amount: Math.round(Math.random() * 10000),
       category: categories[Math.floor(Math.random() * categories.length)],
       createdAt: new Date(Date.now() - Math.floor(Math.random() * 10000000000)),
     });
@@ -28,4 +28,4 @@ export const generateFakeTransactions = (count: number): Transaction[] => {
   return transactions;
 };
 
-export const fakeTransactions = generateFakeTransactions(1000);
+export const fakeTransactions = generateFakeTransactions(Math.round(Math.random() * 500) + 1000);

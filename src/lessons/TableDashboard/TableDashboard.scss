@@ -1,0 +1,121 @@
+@import "../../_variables.scss";
+
+.table-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  background-color: var(--color-bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  color: var(--color-text-primary);
+  max-width: 1000px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    h2 {
+      margin: 0;
+      color: var(--color-text-primary);
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+
+    .search-input {
+      flex: 1;
+      padding: 10px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+      background-color: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      font-size: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      }
+    }
+    
+    .view-mode-switcher {
+       // Styles are handled by the Switcher component itself, 
+       // but we might want some spacing if needed.
+    }
+  }
+}
+
+.smart-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-primary);
+}
+
+.smart-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+
+  thead {
+    background-color: var(--color-bg-secondary);
+    
+    th {
+      padding: 12px 16px;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      border-bottom: 2px solid var(--color-border);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.2s;
+      border-bottom: 1px solid var(--color-border);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: var(--color-bg-secondary);
+      }
+
+      td {
+        padding: 12px 16px;
+        color: var(--color-text-primary);
+        border-bottom: 1px solid var(--color-border);
+      }
+    }
+  }
+
+  .action-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    color: white;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+  }
+}

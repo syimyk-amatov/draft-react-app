@@ -1,4 +1,6 @@
 import "./App.scss";
+import { BarChartDemo } from "./lessons/Charts/BarChart";
+import { CounterReducer } from "./lessons/CounterReducer/CounterReducer";
 import { DocumentTitleCounter } from "./lessons/document-title-counter/DocumentTitleCounter";
 import { PasswordGenerator } from "./lessons/PasswordGenerator/PasswordGenerator";
 import { TableDashboard } from "./lessons/TableDashboard/TableDashboard";
@@ -21,6 +23,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="App">
+        <CounterReducer />
         <TableDashboard />
         <TransactionAnalyticsDemo />
         <TooltipDemo />

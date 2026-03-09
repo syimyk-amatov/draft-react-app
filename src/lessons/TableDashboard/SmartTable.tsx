@@ -31,7 +31,7 @@ export const SmartTableCell = (props: { value: any; type: "string" | "number" | 
 };
 
 export const SmartTable = (props: SmartTableProps) => {
-  console.log("--- TABLE RENDERED ---");
+  console.log('SmartTable');
   return (
     <table className="smart-table">
       <thead>

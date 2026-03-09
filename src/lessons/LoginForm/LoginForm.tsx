@@ -1,4 +1,3 @@
-import { error } from "console";
 import { useReducer } from "react";
 
 type ActionType =

@@ -10,6 +10,8 @@ export const TableDashboard = () => {
   const [filter, setFilter] = useState("");
   const [filteredData, setFilteredData] = useState(initialData);
   const [viewMode, setViewMode] = useState<"table" | "card">("table");
+
+  console.log('TableDashboard');
   
   // NOTE: This array is recreated on every render! 
   // This causes SmartTable (wrapped in memo) to re-render even if data didn't change.

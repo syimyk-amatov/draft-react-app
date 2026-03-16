@@ -6,9 +6,9 @@
   user-select: none;
 
   /* Use CSS variables from context if available, or fallbacks */
-  --switcher-bg: var(--text-color, #ccc);
-  --switcher-circle: var(--bg-color, #fff);
-  --switcher-active-bg: var(--card-hover-border, #2193b0);
+  --switcher-bg: var(--color-text-secondary);
+  --switcher-circle: var(--color-bg-primary);
+  --switcher-active-bg: var(--color-primary);
   
   .switcher-label {
     font-size: 0.9rem;

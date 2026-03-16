@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import "./tic-tac-toe-game.scss";
 
 enum FieldValue {
@@ -28,7 +28,7 @@ type FieldProps = {
 };
 
 const Field = ({ value, rowIndex, colIndex, onSelect }: FieldProps) => {
-  let fieldContent: JSX.Element | null;
+  let fieldContent: ReactElement | null;
   switch (value) {
     case FieldValue.Naught:
       fieldContent = <Naught />;

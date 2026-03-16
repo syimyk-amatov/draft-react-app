@@ -1,8 +1,9 @@
+import { ReactElement } from "react";
 import { FruitVotes } from "./fruit-votes";
 
-export const FruitWinnerDisplay = ({ fruitVotes }: React.PropsWithChildren<{ fruitVotes: FruitVotes[] }>): JSX.Element => {
-  const maxVotes = Math.max(...fruitVotes.map(f => f.votes));
-  const winners = fruitVotes.filter(f => f.votes === maxVotes);
+export const FruitWinnerDisplay = ({ fruitVotes }: React.PropsWithChildren<{ fruitVotes: FruitVotes[] }>): ReactElement => {
+  const maxVotes = Math.max(...fruitVotes.map((f) => f.votes));
+  const winners = fruitVotes.filter((f) => f.votes === maxVotes);
   const hasWinner = maxVotes > 0;
 
   return (
@@ -11,11 +12,11 @@ export const FruitWinnerDisplay = ({ fruitVotes }: React.PropsWithChildren<{ fru
       {hasWinner ? (
         <div className="winner-content">
           <div className="winners-list">
-             {winners.map(winner => (
-               <div key={winner.name} className="winner-item">
-                  <div className="winner-icon">{winner.name}</div>
-               </div>
-             ))}
+            {winners.map((winner) => (
+              <div key={winner.name} className="winner-item">
+                <div className="winner-icon">{winner.name}</div>
+              </div>
+            ))}
           </div>
           <div className="winner-count">{maxVotes} Votes</div>
         </div>

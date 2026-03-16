@@ -5,7 +5,7 @@ import "./FruitVotingApp.scss";
 import { useTheme } from "../theme/ThemeContext";
 import { ThemeSwitcher } from "../theme/ThemeSwitcher";
 
-export const FruitVotingApp = (): JSX.Element => {
+export const FruitVotingApp = (): React.ReactElement => {
   const fruits = ["🍎", "🍌", "🍊", "🍇", "🍉"];
   const [fruitVotes, setFruitVotes] = useState(fruits.map((fruit) => ({ name: fruit, votes: 0 })));
   const { theme } = useTheme();
@@ -15,7 +15,7 @@ export const FruitVotingApp = (): JSX.Element => {
   };
 
   return (
-    <div className={`fruit-voting-app ${theme}`}>
+    <div className={`fruit-voting-app`}>
       <div style={{ position: "absolute", top: "1rem", right: "1.5rem" }}>
         <ThemeSwitcher />
       </div>
